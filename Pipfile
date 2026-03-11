@@ -9,6 +9,7 @@ qiskit-algorithms = "*"
 matplotlib = "*"
 pylatexenc = "*"
 jupyter = "*"
+qiskit-aer = "*"
 
 [dev-packages]
 
