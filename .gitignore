@@ -1,0 +1,34 @@
+*~
+*.png
+*.mp4
+*.ps
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+
+# Data and Logs
+*.log
+*.temp
+*.tmp
+data/  # Consider ignoring large data files
+
+# OS and Editor Files
+.DS_Store
+.vscode/

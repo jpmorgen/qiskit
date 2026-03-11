@@ -1,0 +1,222 @@
+Quantum algorithms
+
+Shor's Algorithm – can factor large numbers exponentially faster (important for cryptography).
+
+Grover's Algorithm – speeds up searching in unsorted databases.
+
+ChatGPT is just being an ad for itself, so download qiskit and start
+playing with it.
+
+Should I do this in something new or just in emacs?  Probably most
+sane to just stick with one change/thing to learn at a time.
+
+I should set up a pyenv and pipenv
+
+qiskit 2.2 seems current stable and requires Ptyhon >=3.10.  I have 3.13.5
+
+Since it wasn't the end of the world to install the frozen python
+after the fact, just use system python for now
+
+cd ~/py
+mkdir qiskit
+cd qiskit
+pipenv install --python 3.13
+pipenv install qiskit
+pyenv local 3.13
+
+Sat Mar 07 18:31:57 2026 EST  jpmorgen@snipe
+
+Watching
+
+https://www.google.com/search?q=quantum+circuits&rlz=1C1ONGR_enUS1090US1090&oq=quantum+circuit&gs_lcrp=EgZjaHJvbWUqDQgAEAAYkQIYgAQYigUyDQgAEAAYkQIYgAQYigUyBggBEEUYOTINCAIQLhjHARjRAxiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDI4ODdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:3155ca24,vid:NTplT4WnNbk,st:491
+
+https://www.youtube.com/watch?v=NTplT4WnNbk&t=491s
+
+
+Mon Mar 09 11:59:49 2026 EDT  jpmorgen@snipe
+
+Followed 5-map video,
+
+https://www.youtube.com/playlist?list=PLOFEBzvs-VvoZxe2ClFy27yOt6VzsTEJK
+
+which I thought was lesson 3 but was really confusing until I watched
+more of the above.
+
+So a lot of this is solving puzzels (maps) to create circuits.  It is
+like drawing out your own computer
+
+Full set:
+
+https://www.youtube.com/playlist?list=PLOFEBzvs-VvoZxe2ClFy27yOt6VzsTEJK
+
+Mon Mar 09 12:27:08 2026 EDT  jpmorgen@snipe
+
+Python is not working the way I expect
+
+John Waherson quantum computer
+
+Mon Mar 09 15:36:31 2026 EDT  jpmorgen@snipe
+
+Thinking more about the map thing.  Basically, we need to take the
+problem and make a map out of it that conforms to the qbit
+architecture.  A very primitive form of programming!
+
+Josephson junction = artificial atom with multiple energy levels, but
+bottom 2 are the qbit
+
+microwave resonators are squiggly lines that 
+
+pulses shape the qbit, 1GHz
+
+primitives sampler & estimator
+
+
+pip install quiskit[visualization]
+
+Understanding quntum crcuiters and quantum inter formation
+
+This is a 3-hours series on quantum computing
+
+https://www.youtube.com/watch?v=30U2DTfIrOU
+
+First of John Watrous IBM 2023
+https://www.youtube.com/watch?v=3-c4xJa7Flk&list=PLOFEBzvs-VvqoeIypXYLLf0PY-WOQMLR3&index=2
+
+superconducting transmon qbits
+
+https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/quantum-information
+
+Pauli operations: Pauli matricies
+
+II (identity matrix), \sigma_x = X (bit flip); Y = \sigma_y, Z
+=\sigma_z (phase flip)
+
+H = Hadamard = (1/sqrt(2) 1/sqrt(2)
+    	        1/sqrt(2) -1/sqrt(2))
+
+H goes from standard basis to |+> + |->
+
+P = Phase operation
+(1 0)
+(0 e^{i\theta})
+
+II = P_0
+Z = P_\pi
+
+H converts from |0> to |+> and H|1> to |-> and back again
+
+Independent operations M on X and N on Y is equivalent to M [tensor
+product] N performed on system (X, Y)
+
+
+--! Bell states are entangled states that represent a basis for ALL
+    multi-bit states, entangled or not!
+
+Correlation stuff is another way of saying that is is not a tensor
+product, which is sort of like diagonal but not exactly
+
+Tue Mar 10 11:56:09 2026 EDT  jpmorgen@snipe
+
+In
+https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/multiple-systems/quantum-information
+
+at the bottom, getting into the way that bits are flopped in quantum
+notation
+
+Tue Mar 10 14:46:36 2026 EDT  jpmorgen@snipe
+
+Starting ot understand the qiskit toolbox more.  Circuits are being
+introduced:
+
+https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/quantum-circuits/circuits
+
+Indicating circuits, like a mathematical index, with 0 on top and N on
+bottom.  0th (top bit) is put on the far right in a tuple, as if you
+rotated clockwise.
+
+Projective states explanation is very opaque, but th eoutcome is
+pretty sensible.
+
+Tue Mar 10 16:38:17 2026 EDT  jpmorgen@snipe
+
+Back to video now that I am done with circuit in-depth lesson 3.
+
+Depth of circuit: bits can run in parallel until they start to
+interact.  Then that interacting set forms a new layer and has to
+finish before the next set of parallel bit processing can happen
+
+Swap gates are bad -- avoid if possible
+
+Dynamical decoupling  I I
+
+Pauli Twirling also basis of noise projection
+
+Shots for sampling the standard basis state
+
+Estimator seems to measure a Hamiltonian/eigenbasis
+
+qiskit patterns
+
+Ahh.  I don't need to listen to the video
+
+https://quantum.cloud.ibm.com/docs/en/tutorials/quantum-approximate-optimization-algorithm
+
+pip install qiskit-ibm-runtime
+
+Drew the map that looked different than the one in the tutorial but
+same as on video
+
+1. Utilize a series of mathematical reformulations, to represent this
+problem using the Quadratic Unconstrained Binary Optimization (QUBO)
+problems notation.
+
+So that is different than I thought.  I thought QUBO was a whole new thing
+
+2. Rewrite the optimization problem as a Hamiltonian for which the
+ground state corresponds to the solution which minimizes the cost
+function.
+
+3.  Create a quantum circuit which will prepare the ground state of
+this Hamiltonian via a process similar to quantum annealing.
+
+QAOA into Hamiltonian is pretty abstract
+
+Ansatz is trial solution
+
+Well, the QUBO is like an operator already, since Q is the matrix that
+needs to be tweaked to minimize the solution.  
+
+Trick:  instead of 0, 1 for cut, go to -1, 1, but algebraically
+
+Minimizing is equivalent to repeated sampling of the cost function Hamiltonian
+
+Confusing notation hopping to +- 1 for bits, but this is work that is foundation
+
+Ahh..  Eigenvalues are +-1 because that is the trivial diagonal
+
+and the Z_ij stuff (capital Z as in Pauli matrix) is also confusing
+but it looks like it means just making it big matrix, also the Zi and
+Zj are "of the form of" so they may be +/- maybe.
+
+Trick Qij = -Qji I guess, so the b goes away.
+
+Getting API key from https://quantum.cloud.ibm.com/
+Using jpmorgen1@gmail account 
+
+Getting 10 minutes of runtime per month of free
+
+Then in each session:
+
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+# This automatically loads the saved credentials
+service = QiskitRuntimeService()
+
+# You can now use the service object to access IBM Quantum hardware
+# e.g., backend = service.get_backend("ibmq_qasm_simulator")
+
+Not able to get much further using the open plan
+
+Ahh.  that is because i am trying to get into mode session and need to
+be paid to do that.  Try
+
