@@ -218,5 +218,36 @@ service = QiskitRuntimeService()
 Not able to get much further using the open plan
 
 Ahh.  that is because i am trying to get into mode session and need to
-be paid to do that.  Try
+be paid to do that.
 
+Thu Mar 12 12:29:11 2026 EDT  jpmorgen@snipe
+
+Did some work with
+
+~/py/qiskit/01_algorithms_introduction_annotated.ipynb
+
+and figured out n_local
+
+In there is what looks like a simulator:
+
+from qiskit.providers.fake_provider import GenericBackendV2
+
+
+coupling_map = [(0, 1), (1, 2), (2, 3)]
+backend = GenericBackendV2(num_qubits=4, coupling_map=coupling_map, seed=54)
+
+Just guessing on the coupling map:
+
+coupling_map = [(0, 1), (1, 2), (2, 3), (3, 4)]
+backend = GenericBackendV2(num_qubits=5, coupling_map=coupling_map, seed=54)
+
+Hmm.  The runtime for the 5 node maxcut problem on quantum hardware is
+supposede to be 22 minutes, which exceeds what I have (10 minutes free)
+
+So the estimator step is taking a long time on the QAOA notebook
+
+Job-mode described here:
+https://quantum.cloud.ibm.com/docs/en/guides/primitives-examples
+
+I just took out the
+Thu Mar 12 18:16:52 2026 EDT  jpmorgen@snipe
