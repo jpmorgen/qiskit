@@ -249,5 +249,6 @@ So the estimator step is taking a long time on the QAOA notebook
 Job-mode described here:
 https://quantum.cloud.ibm.com/docs/en/guides/primitives-examples
 
-I just took out the
-Thu Mar 12 18:16:52 2026 EDT  jpmorgen@snipe
+I just took out the Session and it worked OK.
+
+
