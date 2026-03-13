@@ -251,4 +251,18 @@ https://quantum.cloud.ibm.com/docs/en/guides/primitives-examples
 
 I just took out the Session and it worked OK.
 
+Fri Mar 13 13:56:57 2026 EDT  jpmorgen@snipe
 
+Having angst about the return value of the optimizer.  The dict is
+fundamentally not formatted well.  It should be a list, where each
+list element is a dict with keys = [bit_int, bitstring, value] or
+something like that.
+
+It looks like DataBin is the issue.
+
+It has attributes that depend in on what is returned.  meas is what
+SamplerV2 is returning
+
+https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.BitArray
+
+So this suggests there are other ways to access the data
