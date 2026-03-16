@@ -266,3 +266,7 @@ SamplerV2 is returning
 https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.BitArray
 
 So this suggests there are other ways to access the data
+
+Fri Mar 13 17:28:39 2026 EDT  jpmorgen@snipe
+
+Ahh.  So the bit strings
