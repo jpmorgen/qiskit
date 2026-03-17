@@ -10,6 +10,7 @@ matplotlib = "*"
 pylatexenc = "*"
 jupyter = "*"
 qiskit-aer = "*"
+pandas = "*"
 
 [dev-packages]
 
